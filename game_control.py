@@ -14,6 +14,11 @@ manual_com_keeper = ManualKeeperController(kicker)
 
 running = True
 
+
+kicker.update_model()
+kicker.ball.pos[0] = 1200/2
+kicker.ball.pos[1] = 680/2 + 50
+
 while running:
 
     for event in pygame.event.get():
@@ -28,9 +33,9 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    human_strategy.next_move()
-    manual_com_keeper.move_bar()
-    kicker.update_model()
+    # human_strategy.next_move()
+    # manual_com_keeper.move_bar()
+    # kicker.update_model()
 
     view.display_all(kicker)
 
