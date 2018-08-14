@@ -1,12 +1,12 @@
 import math
 
-from kicker_simulation.model_game_bar import GameBar
-from kicker_simulation.CONST_GAME_FIGURES import *
-from kicker_simulation.CONST_BALL import Coordinate
-from kicker_simulation.CONST_SIMULATION import SIMULATION_TIME_STEP
-from kicker_simulation.CONST_SIMULATION import SHOOT_SPEED
-from kicker_simulation.CONST_SIMULATION import BAR_SPEED
-from kicker_simulation.CONST_KICKER import COURT_HEIGHT
+from kicker.model_game_bar import GameBar
+from kicker.CONST_GAME_FIGURES import *
+from kicker.CONST_BALL import Coordinate
+from kicker.CONST_SIMULATION import SIMULATION_TIME_STEP
+from kicker.CONST_SIMULATION import SHOOT_SPEED
+from kicker.CONST_SIMULATION import BAR_SPEED
+from kicker.CONST_KICKER import COURT_HEIGHT
 
 
 class ComputerDefender(GameBar):

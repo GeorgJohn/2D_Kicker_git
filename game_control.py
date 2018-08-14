@@ -1,9 +1,9 @@
 import pygame
 
-from kicker_simulation.view_game import View
-from kicker_simulation.model_kicker import Kicker
-from kicker_simulation.control_human_automatic_strategy import HumanStrategy
-from kicker_simulation.control_manual_computer_gamer import ManualKeeperController
+from kicker.view_game import View
+from kicker.model_kicker import Kicker
+from kicker.control_human_automatic_strategy import HumanStrategy
+from kicker.control_manual_computer_gamer import ManualKeeperController
 
 clock = pygame.time.Clock()
 

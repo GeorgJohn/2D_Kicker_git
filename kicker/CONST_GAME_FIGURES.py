@@ -1,10 +1,10 @@
 from enum import IntEnum
-from kicker_simulation.CONST_KICKER import COURT_WIDTH
-from kicker_simulation.CONST_KICKER import BAR_POSITION_KEEPER
-from kicker_simulation.CONST_KICKER import BAR_POSITION_DEFENDER
-from kicker_simulation.CONST_KICKER import BAR_POSITION_MIDFIELDER
-from kicker_simulation.CONST_KICKER import BAR_POSITION_FORWARD
-from kicker_simulation.CONST_BALL import BALL_RADIUS
+from kicker.CONST_KICKER import COURT_WIDTH
+from kicker.CONST_KICKER import BAR_POSITION_KEEPER
+from kicker.CONST_KICKER import BAR_POSITION_DEFENDER
+from kicker.CONST_KICKER import BAR_POSITION_MIDFIELDER
+from kicker.CONST_KICKER import BAR_POSITION_FORWARD
+from kicker.CONST_BALL import BALL_RADIUS
 
 """Spielfiguren"""
 FIGURE_BODY_WIDTH = 24

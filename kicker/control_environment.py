@@ -1,13 +1,13 @@
 import pygame
 import random
 
-from kicker_simulation.CONST_SIMULATION import *
-from kicker_simulation.CONST_KICKER import *
+from kicker.CONST_SIMULATION import *
+from kicker.CONST_KICKER import *
 
-from kicker_simulation.model_environment import Environment
-from kicker_simulation.view_game import View
-from kicker_simulation.model_kicker import Kicker
-from kicker_simulation.control_human_automatic_strategy import HumanStrategy
+from kicker.model_environment import Environment
+from kicker.view_game import View
+from kicker.model_kicker import Kicker
+from kicker.control_human_automatic_strategy import HumanStrategy
 
 # KEEPER_START_POS = MAX_POS_KEEPER / 2
 BALL_START_POS_X = COURT_WIDTH / 2

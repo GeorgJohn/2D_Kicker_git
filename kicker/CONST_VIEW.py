@@ -1,5 +1,5 @@
-from kicker_simulation.CONST_KICKER import *
-from kicker_simulation.CONST_GAME_FIGURES import *
+from kicker.CONST_KICKER import *
+from kicker.CONST_GAME_FIGURES import *
 
 
 """Fenster"""

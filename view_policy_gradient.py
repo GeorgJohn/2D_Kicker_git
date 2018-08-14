@@ -3,7 +3,7 @@ import numpy as np
 import random
 import pygame
 
-from kicker_simulation import control_environment as env
+from kicker import control_environment as env
 
 slim = tf.contrib.slim
 

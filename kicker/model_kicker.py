@@ -1,12 +1,12 @@
 import math
 
-from kicker_simulation.CONST_BALL import *
-from kicker_simulation.CONST_KICKER import *
-from kicker_simulation.CONST_SIMULATION import *
-from kicker_simulation import model_ball
-from kicker_simulation import model_human_keeper
-from kicker_simulation import model_computer_keeper
-from kicker_simulation import model_computer_defender
+from kicker.CONST_BALL import *
+from kicker.CONST_KICKER import *
+from kicker.CONST_SIMULATION import *
+from kicker import model_ball
+from kicker import model_human_keeper
+from kicker import model_computer_keeper
+from kicker import model_computer_defender
 
 
 class Kicker:

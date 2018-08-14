@@ -1,6 +1,6 @@
 import pygame
-from kicker_simulation.CONST_VIEW import *
-from kicker_simulation.CONST_BALL import Coordinate
+from kicker.CONST_VIEW import *
+from kicker.CONST_BALL import Coordinate
 
 
 class View:

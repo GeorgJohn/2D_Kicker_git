@@ -4,8 +4,8 @@ import random
 import collections
 import matplotlib.pyplot as plt
 
-from kicker_simulation import plot_reward
-from kicker_simulation import control_environment as env
+from kicker import plot_reward
+from kicker import control_environment as env
 
 slim = tf.contrib.slim
 

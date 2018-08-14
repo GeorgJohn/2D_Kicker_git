@@ -1,4 +1,4 @@
-from kicker_simulation.CONST_SIMULATION import *
+from kicker.CONST_SIMULATION import *
 
 
 class ManualKeeperController:

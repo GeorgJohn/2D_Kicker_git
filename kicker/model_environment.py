@@ -1,7 +1,7 @@
 import math
-from kicker_simulation.CONST_KICKER import *
-from kicker_simulation.CONST_BALL import *
-from kicker_simulation.CONST_GAME_FIGURES import *
+from kicker.CONST_KICKER import *
+from kicker.CONST_BALL import *
+from kicker.CONST_GAME_FIGURES import *
 
 
 class Observation:

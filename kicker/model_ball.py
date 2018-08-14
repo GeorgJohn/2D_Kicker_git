@@ -1,12 +1,12 @@
 import random
 import math
 
-from kicker_simulation.CONST_KICKER import COURT_WIDTH
-from kicker_simulation.CONST_KICKER import COURT_HEIGHT
-from kicker_simulation.CONST_GAME_FIGURES import BAR_POSITION_KEEPER
-from kicker_simulation.CONST_GAME_FIGURES import BAR_POSITION_DEFENDER
-from kicker_simulation.CONST_BALL import *
-from kicker_simulation.CONST_SIMULATION import *
+from kicker.CONST_KICKER import COURT_WIDTH
+from kicker.CONST_KICKER import COURT_HEIGHT
+from kicker.CONST_GAME_FIGURES import BAR_POSITION_KEEPER
+from kicker.CONST_GAME_FIGURES import BAR_POSITION_DEFENDER
+from kicker.CONST_BALL import *
+from kicker.CONST_SIMULATION import *
 
 
 class Ball:
