@@ -28,6 +28,9 @@ class Action(IntEnum):
     UP_DEFENDER_KEEPER = 5
     DOWN_DEFENDER_KEEPER = 6
 
+    UP_DEFENDER_DOWN_KEEPER = 7
+    DOWN_DEFENDER_UP_KEEPER = 8
+
 
 class ActionHandler:
 
@@ -56,6 +59,12 @@ class ActionHandler:
         elif action == Action.DOWN_DEFENDER_KEEPER:
             self.move_down_keeper()
             self.move_down_defender()
+        elif action == Action.UP_DEFENDER_DOWN_KEEPER:
+            self.move_up_defender()
+            self.move_down_keeper()
+        elif action == Action.DOWN_DEFENDER_UP_KEEPER:
+            self.move_down_defender()
+            self.move_up_keeper()
         else:
             print("undefined action !!!")
 
@@ -108,7 +117,9 @@ class EnvironmentController:
         # self.kicker.computer_keeper.position = random.randint(0, MAX_POS_KEEPER)
         # self.kicker.computer_defender.position = random.randint(0, MAX_POS_DEFENDER)
         self.kicker.human_keeper.reset_bar()
-        self.env.update_std(self.kicker)
+        self.kicker.human_defender.reset_bar()
+        for k in range(Environment.MAX_LEN_BUFFER):
+            self.env.update_std(self.kicker)
         self.env.set_reward(0)
         return [self.env.get_observation(), self.env.get_reward(), self.env.get_done()]
 
