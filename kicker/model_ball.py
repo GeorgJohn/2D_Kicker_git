@@ -26,7 +26,7 @@ class Ball:
         self.angle = self.new_angle
 
     def update_all(self):
-        self.speed = self.speed - 0.01 * 9810 * SIMULATION_TIME_STEP
+        self.speed = self.speed - 0.005 * 9810 * SIMULATION_TIME_STEP
         if self.speed <= 0:
             self.speed = 0
 
@@ -49,13 +49,25 @@ class Ball:
         #     self.new_angle = random.uniform(- 0.1, 0.1)
         # self.speed = KICK_OFF_SPEED
 
+        """Ball startet auf einem zufälligm punkt in der gegnerischen Seite mit zufälligem winkel +15; -15 Grad"""
+        pos_x = random.randint(COURT_WIDTH / 2, COURT_WIDTH - 100)
+        pos_y = random.randint(BALL_RADIUS, COURT_HEIGHT - BALL_RADIUS)
+        self.pos[Coordinate.X] = self.new_pos[Coordinate.X] = pos_x  # COURT_WIDTH - 100
+        self.pos[Coordinate.Y] = self.new_pos[Coordinate.Y] = pos_y  # COURT_HEIGHT / 2
+        self.new_angle = random.uniform(- math.pi / 12, math.pi / 12)
+        if self.new_angle > 0:
+            self.angle = self.new_angle = self.new_angle - math.pi
+        else:
+            self.angle = self.new_angle = self.new_angle + math.pi
+
         """Ball startet auf einem zufälligen Punkt der y-Achse in der Mitte des Spielfeldes
            der Startwinkel ist aber immer so das der Ball genau auf die mitte des Tores kommt"""
-        self.pos[Coordinate.X] = self.new_pos[Coordinate.X] = COURT_WIDTH - BAR_POSITION_DEFENDER
-        self.pos[Coordinate.Y] = self.new_pos[Coordinate.Y] = random.randint(BALL_RADIUS, COURT_HEIGHT - BALL_RADIUS)
+        # self.pos[Coordinate.X] = self.new_pos[Coordinate.X] = COURT_WIDTH - BAR_POSITION_DEFENDER
+        # self.pos[Coordinate.Y] = self.new_pos[Coordinate.Y] = random.randint(BALL_RADIUS, COURT_HEIGHT - BALL_RADIUS)
+        #
+        # delta_y = COURT_HEIGHT / 2 - self.pos[Coordinate.Y]
+        # self.angle = self.new_angle = math.pi - math.atan2(delta_y, COURT_WIDTH - BAR_POSITION_DEFENDER)
 
-        delta_y = COURT_HEIGHT / 2 - self.pos[Coordinate.Y]
-        self.angle = self.new_angle = math.pi - math.atan2(delta_y, COURT_WIDTH - BAR_POSITION_DEFENDER)
         # if random.randint(0, 1):
         #     self.angle = self.new_angle
         # else:

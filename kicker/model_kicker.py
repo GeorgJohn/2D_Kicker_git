@@ -6,12 +6,12 @@ from kicker.CONST_SIMULATION import *
 from kicker import model_ball
 from kicker import model_human_keeper
 from kicker import model_human_defender
-from kicker import model_human_midfielder
-from kicker import model_human_forward
+# from kicker import model_human_midfielder
+# from kicker import model_human_forward
 from kicker import model_computer_keeper
 from kicker import model_computer_defender
-from kicker import model_computer_midfielder
-from kicker import model_computer_forward
+# from kicker import model_computer_midfielder
+# from kicker import model_computer_forward
 
 
 class Kicker:
@@ -30,12 +30,12 @@ class Kicker:
         self.ball.kick_off()
         self.human_keeper = model_human_keeper.HumanKeeper()
         self.human_defender = model_human_defender.HumanDefender()
-        self.human_midfielder = model_human_midfielder.HumanMidfielder()
-        self.human_forward = model_human_forward.HumanForward()
+        # self.human_midfielder = model_human_midfielder.HumanMidfielder()
+        # self.human_forward = model_human_forward.HumanForward()
         self.computer_keeper = model_computer_keeper.ComputerKeeper()
         self.computer_defender = model_computer_defender.ComputerDefender()
-        self.computer_midfielder = model_computer_midfielder.ComputerMidfielder()
-        self.computer_forward = model_computer_forward.ComputerForward()
+        # self.computer_midfielder = model_computer_midfielder.ComputerMidfielder()
+        # self.computer_forward = model_computer_forward.ComputerForward()
         self.score = [0, 0]
         self.ball_in_goal_area = False
         self.terminal_state = False
@@ -44,6 +44,7 @@ class Kicker:
         self.terminal_state = False
         self.ball.move()
         self.human_keeper.check_for_interaction(self)
+        self.human_defender.check_for_interaction(self)
         self.computer_keeper.check_for_interaction(self)
         self.computer_defender.check_for_interaction(self)
 

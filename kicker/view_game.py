@@ -172,12 +172,15 @@ class View:
         self.display_court_line()
         self.display_info()
         self.display_ball(kicker.ball)
-        self.display_gamer_bars(keeper=True, defender=True, midfielder=True, forward=True)
-        self.display_human_figures(hum_keeper=kicker.human_keeper, hum_defender=kicker.human_defender,
-                                   hum_midfielder=kicker.human_midfielder, hum_forward=kicker.human_forward)
-        self.display_computer_figures(com_keeper=kicker.computer_keeper, com_defender=kicker.computer_defender,
-                                      com_midfielder=kicker.computer_midfielder, com_forward=kicker.computer_forward)
-        # self.display_human_figures(hum_keeper=my_human_keeper, hum_defender=my_human_defender)
-        # self.display_computer_figures(com_keeper=my_computer_keeper, com_defender=my_computer_defender)
+        '''Anzeigen aller Spielstangen und Spielfiguren'''
+        # self.display_gamer_bars(keeper=True, defender=True, midfielder=True, forward=True)
+        # self.display_human_figures(hum_keeper=kicker.human_keeper, hum_defender=kicker.human_defender,
+        #                            hum_midfielder=kicker.human_midfielder, hum_forward=kicker.human_forward)
+        # self.display_computer_figures(com_keeper=kicker.computer_keeper, com_defender=kicker.computer_defender,
+        #                               com_midfielder=kicker.computer_midfielder, com_forward=kicker.computer_forward)
+        '''Anzeigen von Torward und Verteidigung-Spielstangen und Spielfiguren'''
+        self.display_gamer_bars(keeper=True, defender=True)
+        self.display_human_figures(hum_keeper=kicker.human_keeper, hum_defender=kicker.human_defender)
+        self.display_computer_figures(com_keeper=kicker.computer_keeper, com_defender=kicker.computer_defender)
         self.display_goal()
         self.display_score(kicker.get_score())

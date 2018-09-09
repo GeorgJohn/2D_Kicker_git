@@ -4,41 +4,51 @@ from kicker.view_game import View
 from kicker.model_kicker import Kicker
 from kicker.control_human_automatic_strategy import HumanStrategy
 from kicker.control_manual_computer_gamer import ManualKeeperController
-
-clock = pygame.time.Clock()
-
-view = View()
-kicker = Kicker()
-human_strategy = HumanStrategy(kicker)
-manual_com_keeper = ManualKeeperController(kicker)
-
-running = True
+from kicker.control_manual_computer_gamer import ManualDefenderController
 
 
-kicker.update_model()
-kicker.ball.pos[0] = 1200/2
-kicker.ball.pos[1] = 680/2 + 50
+def main():
+    clock = pygame.time.Clock()
 
-while running:
+    view = View()
+    kicker = Kicker()
+    human_strategy = HumanStrategy(kicker)
+    manual_com_keeper = ManualKeeperController(kicker)
+    manual_com_defender = ManualDefenderController(kicker)
 
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_DOWN:
-                manual_com_keeper.set_move_up()
-            elif event.key == pygame.K_UP:
-                manual_com_keeper.set_move_down()
-        elif event.type == pygame.KEYUP:
-            if event.key in (pygame.K_UP, pygame.K_DOWN):
-                manual_com_keeper.reset_move_bar()
-        if event.type == pygame.QUIT:
-            running = False
+    running = True
 
-    # human_strategy.next_move()
-    # manual_com_keeper.move_bar()
-    # kicker.update_model()
+    while running:
 
-    view.display_all(kicker)
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_DOWN:
+                    manual_com_keeper.set_move_up()
+                elif event.key == pygame.K_UP:
+                    manual_com_keeper.set_move_down()
+                if event.key == pygame.K_s:
+                    manual_com_defender.set_move_up()
+                elif event.key == pygame.K_w:
+                    manual_com_defender.set_move_down()
+            elif event.type == pygame.KEYUP:
+                if event.key in (pygame.K_UP, pygame.K_DOWN):
+                    manual_com_keeper.reset_move_bar()
+                if event.key in (pygame.K_w, pygame.K_s):
+                    manual_com_defender.reset_move_bar()
+            if event.type == pygame.QUIT:
+                running = False
 
-    clock.tick_busy_loop(60)
+        human_strategy.next_move()
+        manual_com_keeper.move_bar()
+        manual_com_defender.move_bar()
+        kicker.update_model()
 
-    pygame.display.flip()
+        view.display_all(kicker)
+
+        clock.tick_busy_loop(60)
+
+        pygame.display.flip()
+
+
+if __name__ == '__main__':
+    main()
