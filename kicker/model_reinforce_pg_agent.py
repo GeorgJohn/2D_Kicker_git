@@ -82,8 +82,7 @@ class PGAgent(object):
     @staticmethod
     def epsilon_greedy_action(action_distribution, epsilon=1e-1):
         if random.random() < epsilon:
-            return np.argmax(np.random.random(
-                action_distribution.shape))
+            return np.argmax(np.random.random(action_distribution.shape))
         else:
             return np.argmax(action_distribution)
 

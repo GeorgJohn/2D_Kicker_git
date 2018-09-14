@@ -24,10 +24,13 @@ class Observation:
         standardize_angle = kicker.ball.angle / math.pi
 
         standardize_computer_keeper_pos = kicker.computer_keeper.position / MAX_POS_KEEPER
-        standardize_human_gamer_pos = kicker.human_keeper.position / MAX_POS_KEEPER
+        standardize_computer_defender_pos = kicker.computer_defender.position / MAX_POS_DEFENDER
+        standardize_human_keeper_pos = kicker.human_keeper.position / MAX_POS_KEEPER
+        standardize_human_defender_pos = kicker.human_defender.position / MAX_POS_DEFENDER
 
         self._state = [standardize_x_pos, standardize_y_pos, standardize_speed, standardize_angle,
-                       standardize_computer_keeper_pos, standardize_human_gamer_pos]
+                       standardize_computer_keeper_pos, standardize_computer_defender_pos,
+                       standardize_human_keeper_pos, standardize_human_defender_pos]
 
         self._state_buffer.append(self._state)
 

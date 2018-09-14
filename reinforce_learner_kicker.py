@@ -19,8 +19,8 @@ def discount_rewards(rewards, gamma=0.98):
 
 def main():
     # Configure Settings
-    total_episodes = 1000000
-    epsilon_stop = 500000
+    total_episodes = 100000
+    epsilon_stop = 50000
     train_frequency = 1
     plot_frequency = 10
     max_episode_length = 5000
@@ -31,20 +31,20 @@ def main():
 
     explore_exploit_setting = 'greedy'
 
-    s_path_model = "/home/prock/models/reinforce_kicker_"
-    s_path_reward = "/home/prock/data/reinforce_kicker_reward_train_greedy_data.txt"
-    s_path_batch_loss = "/home/prock/data/reinforce_kicker_batch_loss_train_greedy_data.txt"
+    s_path_model = "/home/prock/models/reinforce_kicker_alpha_0.000001_"
+    s_path_reward = "/home/prock/data/reinforce_kicker_alpha_0.000001_reward_train_greedy_data.txt"
+    s_path_batch_loss = "/home/prock/data/reinforce_kicker_alpha_0.000001_batch_loss_train_greedy_data.txt"
 
     env = Env.EnvironmentController()
-    state_size = 24
+    state_size = 32
     num_actions = 9
 
     solved = False
 
     with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as session:
         agent = PGAgent(session=session, state_size=state_size, num_actions=num_actions, hidden_size_1=240,
-                        hidden_size_2=720, hidden_size_3=680, hidden_size_4=720, hidden_size_5=80,
-                        learning_rate=1e-7, explore_exploit_setting=explore_exploit_setting)
+                        hidden_size_2=720, hidden_size_3=680, hidden_size_4=720, hidden_size_5=81,
+                        learning_rate=1e-6, explore_exploit_setting=explore_exploit_setting)
 
         session.run(tf.global_variables_initializer())
 
